@@ -17,14 +17,14 @@ describe('Lección 2 - Comparadores (Matchers) Avanzados', () => {
     const user = getUser();
     // RETO 1: Esta prueba falla porque usa `toBe`. 
     // Cámbiala para que use `toEqual` y pase con éxito.
-    expect(user).toBe({ id: 1, name: 'Diego', active: true });
+    expect(user).toEqual({ id: 1, name: 'Diego', active: true });
   });
 
   test('debería contener el color verde en el arreglo de colores', () => {
     const colors = getColors();
     // RETO 2: Usa el matcher `.toContain(...)` para validar que el array contiene 'green'.
     // Reemplaza la aserción de abajo.
-    expect(colors).toBeDefined(); 
+    expect(colors).toContain('green');
   });
 
   test('debería lanzar un error si no se pasa configuración', () => {
@@ -32,7 +32,7 @@ describe('Lección 2 - Comparadores (Matchers) Avanzados', () => {
     // una función anónima que ejecute nuestro código.
     // Ejemplo: expect(() => miFuncion()).toThrow('mensaje de error');
     // Corrige la aserción de abajo para verificar que lanza el error 'Config missing'.
-    expect(checkConfig).toBeDefined();
+    expect(() => checkConfig()).toThrow('Config missing');
   });
 
 });
