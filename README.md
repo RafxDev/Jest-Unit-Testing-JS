@@ -1,4 +1,4 @@
-# Laboratorio de Aprendizaje de Jest (JS)
+# Laboratorio de Aprendizaje de Jest (Resuelto) (JS)
 
 ¡Bienvenido al laboratorio de testing con Jest! Aquí aprenderás los fundamentos y conceptos intermedios de las pruebas unitarias en JavaScript.
 
