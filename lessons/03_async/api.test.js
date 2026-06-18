@@ -15,13 +15,13 @@ describe('Lección 3 - Testing de Código Asíncrono', () => {
     // RETO 1: Para que Jest espere la resolución, debes retornar la promesa.
     // Encadena un `.then()` para validar que los datos devueltos coincidan con { id: 1, name: 'Sofia' }.
     // Pista: return fetchUserData(1).then(data => { expect(data).toEqual(...) });
-    return fetchUserData(1); // Modificar esta línea para agregar el .then() con la aserción
+    return fetchUserData (1).then(data => { expect(data).toEqual({ id: 1, name: 'Sofia' }); }); // Modificar esta línea para agregar el .then() con la aserción
   });
 
   test('debería resolver con los datos del usuario usando async/await', async () => {
     // RETO 2: Convierte esta prueba para que obtenga los datos usando `await`.
     // Luego compara los datos con { id: 1, name: 'Sofia' } usando `.toEqual`.
-    const data = null; // Reemplaza null por: await fetchUserData(1)
+    const data = await fetchUserData(1); // Reemplaza null por: await fetchUserData(1)
     
     expect(data).toEqual({ id: 1, name: 'Sofia' });
   });
@@ -30,7 +30,7 @@ describe('Lección 3 - Testing de Código Asíncrono', () => {
     // RETO 3: Verifica que al pedir el usuario con ID 99, la promesa sea rechazada.
     // Puedes usar: await expect(promise).rejects.toThrow('User not found');
     // Reemplaza la línea de abajo para probar el rechazo correctamente.
-    await expect(fetchUserData(99)).resolves.toBeDefined();
+    await expect(fetchUserData(99)).rejects.toThrow('User not found');
   });
 
 });
